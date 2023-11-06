@@ -1,38 +1,35 @@
-/* Write a C++ program to enter number and cost of a class “item” using getdata() and displaydata(). Write getdata() 
-   function outside the class item. */
+/* Write a C++ program to demonstrate use of class employee.(*Variable declares in private section & method 
+declaration in public) */
 
 #include<iostream>
 using namespace std;
-class item
-{
+class employee{
 	private:
+		string name;
 		int id;
-		char name[100];
-		float price;
 	public:
-		void getdata();
-		void putdata()
+		void getdata()
 		{
     		cout<<"My Name Is Vadariya Shrey"<<endl;
     		cout<<"En_no :: 220130318054 "<<endl;
-			cout<<"Product_id is::"<<id<<endl;
-			cout<<"Product_name is::"<<name<<endl;
-			cout<<"Product_price is::"<<price<<endl;
-		}
-};
-void item::getdata()
-{
-			cout<<"Enter the Product_id::";
+			cout<<"Enter The Id ::"<<endl;
 			cin>>id;
-			cout<<"Enter the Product_name::";
-			cin>>name;
-			cout<<"Enter the Product_price::";
-			cin>>price;	
+			cin.ignore();
+			cout<<"Enter The Name ::"<<endl;
+			getline(cin,name);
+		}
+		void display_employee();
+};
+void employee ::display_employee()
+{
+	cout<<"Employee Details:\n";
+	cout<<"Id::"<<id<<endl;
+	cout<<"Name::"<<name;
 }
 int main()
-{	
-	item t1;
-	t1.getdata();
-	t1.putdata();
+{
+	employee e1;
+	e1.getdata();
+	e1.display_employee();
 	return 0;
 }
